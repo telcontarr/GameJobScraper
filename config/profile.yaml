@@ -44,11 +44,11 @@ candidate:
     medium_match:
       - "Encounter Designer"
       - "Game Designer"
-      - "Technical Level Designer"
-      - "Content Designer"
-    low_match:
       - "Quest Designer"
+      - "Content Designer"
       - "Narrative Designer"
+    low_match:
+      - "Technical Level Designer"
       - "Systems Designer"
 
   locations:
