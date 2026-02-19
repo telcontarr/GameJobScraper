@@ -3,7 +3,7 @@ database:
 
 scraping:
   schedule_hours: [8, 20]  # 8 AM and 8 PM EST
-  timezone: "US/Eastern"
+  timezone: "US/Central"
   jsearch:
     enabled: true
     date_filter: "3days"
@@ -24,30 +24,30 @@ search:
     priority:
       queries:
         - text: "Level Designer"
-          locations: ["remote", "Boston, MA", "Providence, RI"]
+          locations: ["remote", "Austin, TX"]
         - text: "World Designer"
-          locations: ["remote", "Boston, MA", "Providence, RI"]
+          locations: ["remote", "Austin, TX"]
         - text: "Senior Level Designer"
-          locations: ["remote", "Boston, MA", "Providence, RI"]
+          locations: ["remote", "Austin, TX"]
         - text: "Lead Level Designer"
           locations: ["remote"]
         - text: "Environment Designer games"
-          locations: ["remote", "Boston, MA"]
+          locations: ["remote", "Austin, TX"]
         - text: "Senior World Designer"
           locations: ["remote"]
 
     us_canada:
       queries:
         - text: "Level Designer"
-          locations: ["United States", "Canada"]
+          locations: ["United States", "Canada", "United Kingdom"]
         - text: "Senior Level Designer"
-          locations: ["United States", "Canada"]
+          locations: ["United States", "Canada", "United Kingdom"]
         - text: "Lead Level Designer"
-          locations: ["United States", "Canada"]
+          locations: ["United States", "Canada", "United Kingdom"]
         - text: "World Designer"
-          locations: ["United States", "Canada"]
+          locations: ["United States", "Canada", "United Kingdom"]
         - text: "Environment Designer games"
-          locations: ["United States", "Canada"]
+          locations: ["United States", "Canada", "United Kingdom"]
 
   title_filters:
     include:
