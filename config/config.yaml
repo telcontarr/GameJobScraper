@@ -1,0 +1,89 @@
+database:
+  path: "data/gamejobtracker.db"
+
+scraping:
+  schedule_hours: [8, 20]  # 8 AM and 8 PM EST
+  timezone: "US/Eastern"
+  jsearch:
+    enabled: true
+    date_filter: "3days"
+    pages_per_query: 2
+    results_per_page: 10
+  hitmarker:
+    enabled: true
+    strategy: "playwright"
+    categories: ["game-design"]
+  workwithindies:
+    enabled: true
+    fetch_full_descriptions: true
+  gamejobsco:
+    enabled: true
+
+search:
+  query_groups:
+    priority:
+      queries:
+        - text: "Level Designer"
+          locations: ["remote", "Boston, MA", "Providence, RI"]
+        - text: "World Designer"
+          locations: ["remote", "Boston, MA", "Providence, RI"]
+        - text: "Senior Level Designer"
+          locations: ["remote", "Boston, MA", "Providence, RI"]
+        - text: "Lead Level Designer"
+          locations: ["remote"]
+        - text: "Environment Designer games"
+          locations: ["remote", "Boston, MA"]
+        - text: "Senior World Designer"
+          locations: ["remote"]
+
+    us_canada:
+      queries:
+        - text: "Level Designer"
+          locations: ["United States", "Canada"]
+        - text: "Senior Level Designer"
+          locations: ["United States", "Canada"]
+        - text: "Lead Level Designer"
+          locations: ["United States", "Canada"]
+        - text: "World Designer"
+          locations: ["United States", "Canada"]
+        - text: "Environment Designer games"
+          locations: ["United States", "Canada"]
+
+  title_filters:
+    include:
+      - "level design"
+      - "world design"
+      - "environment design"
+      - "game design"
+    exclude:
+      - "junior"
+      - "intern"
+      - "mobile"
+      - "casino"
+      - "slots"
+
+scoring:
+  engine: "hybrid"
+  ai_model: "claude-sonnet-4-20250514"
+  min_keyword_score_for_ai: 0.2
+  notification_threshold: 0.5
+  weights:
+    ai: 0.7
+    keyword: 0.3
+
+notifications:
+  email:
+    enabled: true
+    mode: "digest"
+    digest_time: "09:00"
+    smtp_host: "smtp.gmail.com"
+    smtp_port: 587
+    smtp_use_tls: true
+  discord:
+    enabled: true
+    mode: "immediate"
+    min_score: 0.6
+
+logging:
+  level: "INFO"
+  file: "data/logs/gamejobtracker.log"
